@@ -1,0 +1,6 @@
+;NOTE: このコメントはUTF8エンコード保障のためにわざと日本語で書かれています。
+;NOTE: write Japanese comment to enforce VS to recognize UTF8 encoding.
+
+func main()
+
+end func

@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <UseCodebase>true</UseCodebase>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{F8E2E534-CFCC-40E4-AE17-A16A23A14609}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Baku.KuinStudio</RootNamespace>
+    <AssemblyName>KuinStudio</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Common\Infrastructure\TextExtension.cs" />
+    <Compile Include="Common\Product\SharedProject\AllFilesProjectElement.cs" />
+    <Compile Include="Common\Product\SharedProject\AssemblyReferenceNode.cs" />
+    <Compile Include="Common\Product\SharedProject\Attributes.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\AutomationScope.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAFileItem.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAFolderItem.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OANavigableProjectItems.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OANullProperty.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAProject.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAProjectConfigurationProperties.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAProjectItem.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAProjectItems.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAProjects.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAProperties.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAProperty.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAReferenceFolderItem.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\OAReferenceItem.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\VSProject\OAAssemblyReference.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\VSProject\OAProjectReference.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\VSProject\OAReferenceBase.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\VSProject\OAReferences.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\VSProject\OAVSProject.cs" />
+    <Compile Include="Common\Product\SharedProject\Automation\VSProject\OAVSProjectItem.cs" />
+    <Compile Include="Common\Product\SharedProject\BuildDependency.cs" />
+    <Compile Include="Common\Product\SharedProject\BuildPropertyPage.cs" />
+    <Compile Include="Common\Product\SharedProject\ClipboardService.cs" />
+    <Compile Include="Common\Product\SharedProject\Command.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonConfigProvider.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonConstants.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonEditorFactory.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonFileNode.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonFolderNode.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonNonCodeFileNode.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonPackage.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonProjectConfig.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonProjectNode.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonProjectNodeProperties.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonProjectPackage.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonPropertyPage.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonReferenceContainerNode.cs" />
+    <Compile Include="Common\Product\SharedProject\CommonUtils.cs" />
+    <Compile Include="Common\Product\SharedProject\ConfigProvider.cs" />
+    <Compile Include="Common\Product\SharedProject\DataObject.cs" />
+    <Compile Include="Common\Product\SharedProject\DebugTimer.cs" />
+    <Compile Include="Common\Product\SharedProject\DependentFileNode.cs" />
+    <Compile Include="Common\Product\SharedProject\DesignPropertyDescriptor.cs" />
+    <Compile Include="Common\Product\SharedProject\DeveloperActivityAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\DialogWindowVersioningWorkaround.cs" />
+    <Compile Include="Common\Product\SharedProject\DirtyChangedEventArgs.cs" />
+    <Compile Include="Common\Product\SharedProject\DocumentManager.cs" />
+    <Compile Include="Common\Product\SharedProject\EnumBSTR.cs" />
+    <Compile Include="Common\Product\SharedProject\EnumDependencies.cs" />
+    <Compile Include="Common\Product\SharedProject\ExceptionExtensions.cs" />
+    <Compile Include="Common\Product\SharedProject\ExtensibilityEventsDispatcher.cs" />
+    <Compile Include="Common\Product\SharedProject\FileChangeManager.cs" />
+    <Compile Include="Common\Product\SharedProject\FileDocumentManager.cs" />
+    <Compile Include="Common\Product\SharedProject\FileNode.cs" />
+    <Compile Include="Common\Product\SharedProject\FileWatcher.cs" />
+    <Compile Include="Common\Product\SharedProject\FlavoredProjectFactoryBase.cs" />
+    <Compile Include="Common\Product\SharedProject\FolderNode.cs" />
+    <Compile Include="Common\Product\SharedProject\HierarchyIdMap.cs" />
+    <Compile Include="Common\Product\SharedProject\HierarchyNode.cs" />
+    <Compile Include="Common\Product\SharedProject\HierarchyNodeFlags.cs" />
+    <Compile Include="Common\Product\SharedProject\IClipboardService.cs" />
+    <Compile Include="Common\Product\SharedProject\IDEBuildLogger.cs" />
+    <Compile Include="Common\Product\SharedProject\IDiskBasedNode.cs" />
+    <Compile Include="Common\Product\SharedProject\IdleManager.cs" />
+    <Compile Include="Common\Product\SharedProject\ImageHandler.cs" />
+    <Compile Include="Common\Product\SharedProject\Interfaces.cs" />
+    <Compile Include="Common\Product\SharedProject\IProjectLauncher.cs" />
+    <Compile Include="Common\Product\SharedProject\IProjectLaunchProperties.cs" />
+    <Compile Include="Common\Product\SharedProject\IProjectPublisher.cs" />
+    <Compile Include="Common\Product\SharedProject\IPublishFile.cs" />
+    <Compile Include="Common\Product\SharedProject\IPublishProject.cs" />
+    <Compile Include="Common\Product\SharedProject\LocalizableProperties.cs" />
+    <Compile Include="Common\Product\SharedProject\Misc\ConnectionPointContainer.cs" />
+    <Compile Include="Common\Product\SharedProject\Misc\ExternDll.cs" />
+    <Compile Include="Common\Product\SharedProject\Misc\NativeMethods.cs" />
+    <Compile Include="Common\Product\SharedProject\Misc\UnsafeNativeMethods.cs" />
+    <Compile Include="Common\Product\SharedProject\MsBuildProjectElement.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\CommonLibraryNode.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\HierarchyListener.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\ICustomSearchListProvider.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\ILibraryManager.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\IScopeNode.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\ISimpleObject.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\Library.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\LibraryManager.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\LibraryNode.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\LibraryTask.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\ModuleId.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\ProjectLibraryNode.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\SimpleObject.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\SimpleObjectList.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\SourceLocation.cs" />
+    <Compile Include="Common\Product\SharedProject\Navigation\TextLineEventListener.cs" />
+    <Compile Include="Common\Product\SharedProject\NodeProperties.cs" />
+    <Compile Include="Common\Product\SharedProject\ObservableCollectionExtensions.cs" />
+    <Compile Include="Common\Product\SharedProject\OleServiceProvider.cs" />
+    <Compile Include="Common\Product\SharedProject\Output.cs" />
+    <Compile Include="Common\Product\SharedProject\OutputGroup.cs" />
+    <Compile Include="Common\Product\SharedProject\OutputWindowRedirector.cs" />
+    <Compile Include="Common\Product\SharedProject\OverwriteFileDialog.xaml.cs">
+      <DependentUpon>OverwriteFileDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Product\SharedProject\ProcessOutput.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectConfig.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectDesignerDocumentManager.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectDocumentsListener.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectDocumentsListenerForStartupFileUpdates.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectElement.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectFactory.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectFileConstants.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectNode.CopyPaste.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectNode.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectNode.Events.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectNode.IOleCommandTarget.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectPackage.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectReferenceNode.cs" />
+    <Compile Include="Common\Product\SharedProject\ProjectResources.cs" />
+    <Compile Include="Common\Product\SharedProject\PropertiesEditorLauncher.cs" />
+    <Compile Include="Common\Product\SharedProject\ProvideCodeExpansionPathAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\ProvideCodeExpansionsAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\ProvideDebugEngineAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\ProvideDebugExceptionAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\ProvideDebugLanguageAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\ProvideDebugPortPickerAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\ProvideDebugPortSupplierAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\ProvideTextEditorAutomationAttribute.cs" />
+    <Compile Include="Common\Product\SharedProject\PublishFailedException.cs" />
+    <Compile Include="Common\Product\SharedProject\PublishFile.cs" />
+    <Compile Include="Common\Product\SharedProject\PublishProject.cs" />
+    <Compile Include="Common\Product\SharedProject\PublishProjectOptions.cs" />
+    <Compile Include="Common\Product\SharedProject\ReferenceContainerNode.cs" />
+    <Compile Include="Common\Product\SharedProject\ReferenceNode.cs" />
+    <Compile Include="Common\Product\SharedProject\SharedCommands.cs" />
+    <Compile Include="Common\Product\SharedProject\SolutionEventsListener.cs" />
+    <Compile Include="Common\Product\SharedProject\SolutionListener.cs" />
+    <Compile Include="Common\Product\SharedProject\SolutionListenerForBuildDependencyUpdate.cs" />
+    <Compile Include="Common\Product\SharedProject\SolutionListenerForProjectEvents.cs" />
+    <Compile Include="Common\Product\SharedProject\SolutionListenerForProjectOpen.cs" />
+    <Compile Include="Common\Product\SharedProject\StructuresEnums.cs" />
+    <Compile Include="Common\Product\SharedProject\SuspendFileChanges.cs" />
+    <Compile Include="Common\Product\SharedProject\TaskDialog.cs" />
+    <Compile Include="Common\Product\SharedProject\TaskExtensions.cs" />
+    <Compile Include="Common\Product\SharedProject\TaskProgressBar.xaml.cs">
+      <DependentUpon>TaskProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Product\SharedProject\TrackDocumentsHelper.cs" />
+    <Compile Include="Common\Product\SharedProject\UIThread.cs" />
+    <Compile Include="Common\Product\SharedProject\UIThreadBase.cs" />
+    <Compile Include="Common\Product\SharedProject\UIThreadSynchronizer.cs" />
+    <Compile Include="Common\Product\SharedProject\UpdateSolutionEventsListener.cs" />
+    <Compile Include="Common\Product\SharedProject\Utilities.cs" />
+    <Compile Include="Common\Product\SharedProject\VirtualProjectElement.cs" />
+    <Compile Include="Common\Product\SharedProject\VsCommands.cs" />
+    <Compile Include="Common\Product\SharedProject\VsExtensions.cs" />
+    <Compile Include="Common\Product\SharedProject\VSShellUtilities.cs" />
+    <Compile Include="Common\Product\SharedProject\VsTaskExtensions.cs" />
+    <Compile Include="Common\Product\SharedProject\WaitDialog.cs" />
+    <Compile Include="Common\Product\SharedProject\WebPiComponentPickerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Common\Product\SharedProject\WebPiComponentPickerControl.designer.cs">
+      <DependentUpon>WebPiComponentPickerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Product\SharedProject\WebSocketStream.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\Commands.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\ConfigurationControl.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\Controls.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\Dialogs.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\LabelledButton.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\LabelledControl.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\LambdaConverter\ILambdaConverterProvider.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\LambdaConverter\LambdaConverter.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\LambdaConverter\LambdaExtension.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\LambdaConverter\LambdaProperties.cs" />
+    <Compile Include="Common\Product\SharedProject\Wpf\NativeMethods.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\EmptyParser.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\EndParser.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\FuncNameParser.cs" />
+    <Compile Include="ClassifierLogic\IKuinElementParser.cs" />
+    <Compile Include="Classifier\KuinClassificationTypeDefinitions.cs" />
+    <Compile Include="Classifier\KuinClassifier.cs" />
+    <Compile Include="Classifier\KuinClassifierProvider.cs" />
+    <Compile Include="Classifier\KuinFileSpecification.cs" />
+    <Compile Include="Classifier\KuinFormats.cs" />
+    <Compile Include="Classifier\KuinHighlights.cs" />
+    <Compile Include="ClassifierLogic\KuinParser.cs" />
+    <Compile Include="ClassifierLogic\KuinTokens.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\MultiLineComment.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\NumberLiteralParser.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\OperatorParser.cs" />
+    <Compile Include="KuinStudioOptionPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KuinStudioOptionSettings.cs" />
+    <Compile Include="KuinStudioPackage.cs" />
+    <Compile Include="KuinStudioProjectPackage.cs" />
+    <Compile Include="Project\KuinGeneralPropertyPage.cs" />
+    <Compile Include="Project\KuinGeneralPropertyPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Project\KuinGeneralPropertyPageControl.Designer.cs">
+      <DependentUpon>KuinGeneralPropertyPageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Project\KuinLibraryManager.cs" />
+    <Compile Include="Project\KuinProjectFactory.cs" />
+    <Compile Include="Project\KuinProjectNode.cs" />
+    <Compile Include="Project\KuinProjectNodeProperties.cs" />
+    <Compile Include="Project\KuinProjectResources.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\ReservedParser.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\SingleLineComment.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\StringLiteralParser.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\UnknownParser.cs" />
+    <Compile Include="ClassifierLogic\ElementParser\VarNameParser.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Command\KuinCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Common\Product\SharedProject\ProcessOutput.cs.rej" />
+    <None Include="Common\Product\SharedProject\SharedProject.proj" />
+    <None Include="Key.snk" />
+    <None Include="packages.config" />
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KuinCodeItemTemplate\KuinCodeItemTemplate.csproj">
+      <Project>{31F1DD5E-BBC7-48B2-A961-B15F9F09B894}</Project>
+      <Name>KuinCodeItemTemplate</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\KuinProjectTemplate\KuinProjectTemplate.csproj">
+      <Project>{8B2141C6-DCC7-401A-B101-5839F6B867E3}</Project>
+      <Name>KuinProjectTemplate</Name>
+      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="envdte, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE100, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Build, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Build.Framework, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Build.Tasks.v4.0">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Utilities.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.ComponentModelHost, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.CoreUtility, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Debugger.Interop, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Designer.Interfaces, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Editor, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Imaging, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Language.Intellisense, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.OLE.Interop.7.10.6070\lib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b7ed17bb64a9597f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Project.1.0.0.0\lib\net40\Microsoft.VisualStudio.Project.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.ProjectAggregator, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.15.0, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Framework, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.7.10.6071\lib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.10.0.10.0.30319\lib\Microsoft.VisualStudio.Shell.Interop.10.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.11.0.11.0.61030\lib\Microsoft.VisualStudio.Shell.Interop.11.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.9.0.9.0.30729\lib\Microsoft.VisualStudio.Shell.Interop.9.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Text.Data, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Text.Logic, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Text.UI, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Text.UI.Wpf, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.7.10.6070\lib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Threading, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Threading.15.0.240\lib\net45\Microsoft.VisualStudio.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Utilities, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Validation, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Validation.15.0.82\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VSLangProj, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="VSLangProj2, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="VSLangProj80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Project\KuinGeneralPropertyPageControl.resx">
+      <DependentUpon>KuinGeneralPropertyPageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\KuinColor.bmp" />
+    <VSCTCompile Include="Command\KuinStudioCommands.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+      <SubType>Designer</SubType>
+    </VSCTCompile>
+    <Content Include="LICENSE.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\KuinStudioPackage.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Common\Product\SharedProject\ProjectResources.resx">
+      <DependentUpon>ProjectResources.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Product\SharedProject\WebPiComponentPickerControl.resx">
+      <DependentUpon>WebPiComponentPickerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VSPackage.resx">
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Common\Product\SharedProject\OverwriteFileDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Product\SharedProject\TaskProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Common\Product\SharedProject\Wpf\Controls.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

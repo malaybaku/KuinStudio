@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+    <ProjectGuid>$guid1$</ProjectGuid>
+
+    <StartUpFile>main.kn</StartUpFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <UseReleaseBuild>False</UseReleaseBuild>
+    <ApplicationType>Cui</ApplicationType>
+  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' "/>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' "/>
+	<ItemGroup>
+		<Compile Include="main.kn" />
+	</ItemGroup>
+ </Project>

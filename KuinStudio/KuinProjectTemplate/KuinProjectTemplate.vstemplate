@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Kuin Project</Name>
+    <Description>Project which uses Kuin language.</Description>
+    <Icon>KuinProject.ico</Icon>
+    <ProjectType>Kuin</ProjectType>
+    <!--<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>-->
+    <SortOrder>1000</SortOrder>
+    <TemplateID>db301caa-d115-4fad-b7ca-0f97c11b175e</TemplateID>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>KuinApplication</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="ProjectTemplate.knproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">main.kn</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

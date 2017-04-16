@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+  <Extern href="VSDbgCmd.h"/>
+  <Extern href="VsDebugGuids.h"/>
+
+  <Commands package="guidKuinStudioPackage">
+
+    <Groups>
+      <Group guid="guidKuinStudioPackageCmdSet" id="KuinStudioBuildCmdGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_BUILD"/>
+      </Group>
+      <Group guid="guidKuinStudioPackageCmdSet" id="KuinStudioDebugCmdGroup" priority="0x0600">
+        <Parent guid="guidVSDebugGroup" id="IDM_DEBUG_MENU"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidKuinStudioPackageCmdSet" id="kuinDebugBuildCommandId" priority="0x0101" type="Button">
+        <Parent guid="guidKuinStudioPackageCmdSet" id="KuinStudioBuildCmdGroup" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Kuin Debug Build</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidKuinStudioPackageCmdSet" id="kuinReleaseBuildCommandId" priority="0x0102" type="Button">
+        <Parent guid="guidKuinStudioPackageCmdSet" id="KuinStudioBuildCmdGroup" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Kuin Release Build</ButtonText>
+        </Strings>
+      </Button>
+      
+      <Button guid="guidKuinStudioPackageCmdSet" id="kuinDebugBuildAndRunCommandId" priority="0x0103" type="Button">
+        <Parent guid="guidKuinStudioPackageCmdSet" id="KuinStudioDebugCmdGroup" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Kuin Debug Build And Run</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidKuinStudioPackageCmdSet" id="kuinReleaseBuildAndRunCommandId" priority="0x0104" type="Button">
+        <Parent guid="guidKuinStudioPackageCmdSet" id="KuinStudioDebugCmdGroup" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <Strings>
+          <ButtonText>Kuin Release Build And Run</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+    
+  </Commands>
+
+  <KeyBindings>
+    <KeyBinding guid="guidKuinStudioPackageCmdSet" id="kuinDebugBuildCommandId"
+                editor="guidVSStd97" key1="K" mod1="Alt" key2="B"/>
+    <KeyBinding guid="guidKuinStudioPackageCmdSet" id="kuinReleaseBuildCommandId"
+                editor="guidVSStd97" key1="K" mod1="Alt" key2="B" mod2="Control"/>
+    <KeyBinding guid="guidKuinStudioPackageCmdSet" id="kuinDebugBuildAndRunCommandId"
+                editor="guidVSStd97" key1="K" mod1="Alt" key2="VK_F5"/>
+    <KeyBinding guid="guidKuinStudioPackageCmdSet" id="kuinReleaseBuildAndRunCommandId"
+                editor="guidVSStd97" key1="K" mod1="Alt" key2="VK_F5" mod2="Control"/>
+  </KeyBindings>
+
+  <Symbols>
+    <GuidSymbol name="guidKuinStudioPackage" value="{e1594d31-d5e0-4d2a-bffd-5ead7e8364e6}" />
+
+    <GuidSymbol name="guidKuinStudioPackageCmdSet" value="{BAC84289-9DCE-45DD-8400-5A75AE4AC632}">
+      <IDSymbol name="KuinStudioBuildCmdGroup" value="0x1020" />
+      <IDSymbol name="KuinStudioDebugCmdGroup" value="0x1030" />
+
+      <IDSymbol name="kuinDebugBuildCommandId" value="0x4001"/>
+      <IDSymbol name="kuinReleaseBuildCommandId" value="0x4002"/>
+      <IDSymbol name="kuinDebugBuildAndRunCommandId" value="0x4003"/>
+      <IDSymbol name="kuinReleaseBuildAndRunCommandId" value="0x4004"/>
+    </GuidSymbol>
+
+  </Symbols>
+</CommandTable>

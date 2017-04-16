@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>Kuin Code File</Name>
+    <Description>Kuin Code File.</Description>
+    <Icon>KuinCodeItemTemplate.ico</Icon>
+    <TemplateID>abd0ae72-5130-4b6a-aa69-ffd185de11d5</TemplateID>
+    <ProjectType>Kuin</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>util.kn</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem ReplaceParameters="true">util.kn</ProjectItem>
+  </TemplateContent>
+</VSTemplate>
