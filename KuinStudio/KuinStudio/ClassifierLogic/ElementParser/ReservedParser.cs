@@ -23,6 +23,7 @@ namespace Baku.KuinStudio.Parser
             return !(
                 ((int)'a' <= t && t <= (int)'z') ||
                 ((int)'A' <= t && t <= (int)'Z') ||
+                ((int)'0' <= t && t <= (int)'9') ||
                 (t == '_') ||
                 (t == '@')
                 );
